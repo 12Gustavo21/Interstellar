@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Akshar&family=Tapestry&display=swap');
+  
+  header{
+    background: linear-gradient(90deg, #A1A7FC 10%, #1800BF);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0.5rem;
+    z-index: 9999999999999999999999999;
+    position: fixed;
+  }
+  
+  .jup{
+    width: 5vw;
+    height: 5vw;
+  }
+  
+  .film{
+    font-size: 3vw;
+    margin-right: 15vw;
+    margin-left: 8vw;
+    font-family: 'Akshar', sans-serif;
+  }
+  
+  .list{
+    display: flex;
+    list-style: none;
+    font-size: 1.5vw;
+    margin-right: 2vw;;
+    width: 70%;
+  }
+  
+  .list li, a{
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .list li:hover{
+    background: #4d00a0;
+    transform: scale(0.9);
+  }
+  
+  .spr{
+    width: 40vw;
+    height: 40vw;
+    margin-top: 50px;
+    filter: drop-shadow(15px 10px 15px rgba(0, 0, 0, 0.9)) contrast(1.1);
+  }
+  
+  main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  p{
+    font-family: 'Akshar', sans-serif;
+  }
+  
+  .syno{
+    width: 50vw;
+    font-size: 1.8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .scenes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    padding: 1vw 1vw 2vw 1vw;
+  }
+  
+  .mv{
+    margin-left: 40vw;
+  }
+  
+  .prin{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .prin1{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-left: 1vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vw 1vw 1vw 1vw;
+    border: 2px dashed black;
+    background: linear-gradient(180deg, #470099 15%, #E1C9FD);
+  }
+  
+  .cax1{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .cax2{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .imgprin{
+    width: 49%;
+    height: 90%;
+  }
+  
+  .earth{
+    width: 37vw;
+    height: 40vw;
+    filter: drop-shadow(15px 10px 15px rgba(0, 0, 0, 0.9)) contrast(1.1);
+    transition: 2s all;
+  }
+  
+  .earth:hover{
+    transform: rotate(360deg);
+  }
+  
+  .mind{
+    font-size: 1.8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5vw;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  button{
+    font-size: 24px;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 48px;
+    padding: 12px 32px;
+    transition: 1s;
+    margin: 3vw 0vw 0vw 42vw;
+  }
+  
+  button:hover {
+    color: white;
+    cursor: pointer;
+  }
+  
+  button::before{
+    content: "";
+    position: absolute;
+    height: 55px;
+    width: 190px;
+    z-index: -1;
+    border-radius: 48px;
+    background: #A1A7FC;
+    transform: translate(-24px, -8px);
+    transition: 1s;
+  }
+  
+  button:hover::before{
+    background: blue;
+    transform: translate(-33px, -13px);
+  }
+  
+  .theme h1{
+    margin-left: 38vw;
+    margin-bottom: 1vw;
+  }
+  
+  .song {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13vw;
+  }
+  
+  video{
+    width:73vw; 
+    height:41vw;
+  }
+  
+  footer{
+    background: linear-gradient(90deg, #A1A7FC 10%, #1800BF);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 20%;
+    margin-top: 4vw;
+    margin-bottom: -5vw;
+  }
+  
+  .im{
+    display: flex;
+    align-items: flex-start;
+    width: 4vw;
+    margin: 1vw 0vw 1vw 40vw;
+  }
+  
+  .logo{
+    width: 4vw;
+    height: 3.6vw;
+    margin: 1vw 1vw 1vw 1vw;
+  }
+  
+  .logo:hover{
+    cursor: pointer;
+  }
+  
+  .logoi{
+     height: 5vw;
+     width: 5vw;
+     margin: 0.4vw 1vw 1vw 1vw;
+  }
+  
+  .logoi:hover{
+    cursor: pointer;
+  }
+  
+  .ast{
+    width: 20vw;
+    height: 20vw;
+    filter: drop-shadow(15px 10px 15px rgba(0, 0, 0, 0.9)) contrast(1.1);
+    margin: 0 0 16px 1px;
+    transition: 2s all;
+  }
+  
+  .ast:hover{
+    transform: rotate(360deg);
+  }
+  
+  .cop{
+    font-size: 2vw;
+    margin-right: 10vw;
+    margin-left: -20vw;
+    color: white;
+  }
