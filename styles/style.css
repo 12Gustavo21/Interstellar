@@ -1,0 +1,463 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-moz-selection {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+*::selection {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: -1;
+}
+
+header .header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+header .header-box-one {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .header-title {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header .header-title h1 {
+  font-weight: 100;
+  font-size: 2rem;
+  font-family: "Lora", serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+header .header-navigation-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+header .header-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+header .header-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+header .header-list a {
+  font-weight: 100;
+  font-size: 1.2rem;
+  font-family: "Lora", serif;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header .header-list a {
+  position: relative;
+  transition: all 300ms ease-in-out;
+}
+
+header .header-list a::after {
+  display: block;
+  content: "";
+  border-bottom: solid 1px #ffffff;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+header .header-list a:hover::after {
+  transform: scaleX(1);
+}
+
+header .header-list li {
+  letter-spacing: 0.1rem;
+}
+
+header .header-box-two {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header .description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .description h2 {
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-family: "Lora", serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+header .description button {
+  width: 6.25rem;
+  height: 2.5rem;
+  font-weight: 100;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+header .description button:hover,
+header .description button:focus {
+  box-shadow: 0 0.5rem 0.5rem -0.4rem;
+  transform: translateY(-0.25rem);
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main .container {
+  width: 100%;
+  height: 100%;
+}
+
+main .prais-box {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .prais-box h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+  position: relative;
+}
+
+main .prais-box h3::after {
+  content: "";
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.3rem;
+  border-bottom: solid 0.2rem #000000;
+  width: 15%;
+  transform: scaleX(1);
+}
+
+main .theories-box {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main .theories-box .endurance-image {
+  width: 35%;
+  height: 100%;
+}
+
+main .theories-box .theories {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem;
+  background-color: #edede9;
+}
+
+main .theories-box .theories h4 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+}
+
+main .theories-box .theories p {
+  font-weight: 100;
+  font-size: 0.9rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+  padding: 0.5rem 0 2rem 0;
+}
+
+main .theories-box .theories button {
+  width: 9rem;
+  height: 2.5rem;
+  font-weight: 100;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  background: transparent;
+  border: 0.1rem solid #000000;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 300ms ease-in-out;
+}
+
+main .theories-box .theories button:hover,
+main .theories-box .theories button:focus {
+  box-shadow: 0 0.5rem 0.5rem -0.4rem;
+  transform: translateY(-0.25rem);
+}
+
+main .theories-box .gargantua-image {
+  width: 35%;
+  height: 100%;
+}
+
+main .planets-cards {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .planets-tittle {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0 2rem 0;
+}
+
+main .planets-tittle h4 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+
+main .cards-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+main .cards-container .card {
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.4rem 0.4rem -0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+main .cards-container .card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1rem 1rem -0.4rem;
+}
+
+main .cards-container .card .card-image {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+main .cards-container .card .card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+main .cards-container .card .card-description {
+  width: 100%;
+  height: 50%;
+  border: 0.01rem solid #d2d2d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  gap: 1.5rem;
+}
+
+main .cards-container .card .card-title {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main .cards-container .card .card-description h5 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+}
+
+main .cards-container .card .card-description p {
+  font-weight: 100;
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+}
+
+main .cards-container .card .card-description .planet-description {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.01rem solid #d2d2d2;
+  padding-top: 0.5rem;
+}
+
+main .cards-container .card .card-description .planet-description p {
+  font-weight: 100;
+  font-size: 0.9rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  letter-spacing: 0.02rem;
+}
+
+/* Loader */
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+  gap: 2rem;
+  position: absolute;
+}
+
+.loader p {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: "Lora", serif;
+  color: #000000;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  word-wrap: break-word;
+  text-transform: uppercase;
+}
+
+.rocket {
+  width: 10rem;
+  height: 10rem;
+  filter: drop-shadow(1px 1px 6px #000000);
+  animation: animation 2s infinite linear;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}/*# sourceMappingURL=style.css.map */
