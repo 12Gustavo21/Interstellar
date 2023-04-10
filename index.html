@@ -1,153 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="styles/style.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="assets/icons/saturn-icon.svg" type="image/x-icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/icons/saturn-icon.svg" type="image/x-icon" />
 
-        <!-- Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
-            </script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/8f604c477e.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8f604c477e.js" crossorigin="anonymous"></script>
 
-        <!-- Parallax -->
-        <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <!-- Parallax -->
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
-        <!-- Title -->
-        <title>Interstellar</title>
-    </head>
+    <!-- Title -->
+    <title>Interstellar</title>
+</head>
 
-    <body>
-        <header>
-            <section class="header-container">
-                <section class="header-box-one">
-                    <section class="header-title">
-                        <h1>Interstellar</h1>
-                    </section>
-                    <section class="header-navigation-box">
-                        <nav class="header-nav">
-                            <ul class="header-list">
-                                <a href="#">
-                                    <li>Home</li>
-                                </a>
-                                <a href="#">
-                                    <li>About</li>
-                                </a>
-                                <a href="#">
-                                    <li>Caracters</li>
-                                </a>
-                            </ul>
-                        </nav>
-                    </section>
+<body>
+    <header>
+        <section class="header-container">
+            <section class="header-box-one">
+                <section class="header-title">
+                    <h1>Interstellar</h1>
                 </section>
-                <section class="header-box-two">
-                    <section class="description">
-                        <h2>A Christopher Nolan film</h2>
-                        <a href="https://encurtador.com.br/zHJO0" target="_blank" rel="noopener noreferrer">
-                            <button title="Watch in the Prime video">
-                                Watch
-                            </button>
-                        </a>
+                <section class="header-navigation-box">
+                    <nav class="header-nav">
+                        <ul class="header-list">
+                            <li class="item" id="home">Home</li>
+                            <li class="item" id="planets">Planets</li>
+                            <li class="item" id="characters">Characters</li>
+                            <li class="item" id="about">About</li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+            <section class="header-box-two">
+                <section class="description">
+                    <h2>A Christopher Nolan film</h2>
+                    <a href="https://encurtador.com.br/zHJO0" target="_blank" rel="noopener noreferrer">
+                        <button title="Watch in the Prime video">Watch</button>
+                    </a>
+                </section>
+            </section>
+        </section>
+    </header>
+    <main>
+        <section class="main-container">
+            <section class="prais-box">
+                <h3 class="prais-title">
+                    A wonderful movie for lovers of the universe
+                </h3>
+            </section>
+            <section class="theories-box">
+                <section class="endurance-image"></section>
+                <section class="theories">
+                    <h4>Do you know the theories of relativity?</h4>
+                    <p>
+                        The whole movie talks about the theories, but do you know what
+                        they are like?
+                    </p>
+                    <a href="https://www.space.com/17661-theory-general-relativity.html" target="_blank"
+                        title="Know the theories"><button class="theories-button">To know</button></a>
+                </section>
+                <section class="gargantua-image"></section>
+            </section>
+            <section class="planets-cards" id="Planets">
+                <section class="planets-tittle">
+                    <h4>Planets</h4>
+                </section>
+                <section class="cards-container">
+                    <section class="card">
+                        <section class="card-image">
+                            <img src="./assets/images/planets/miller.png"
+                                alt="A scene depicting Dr. Brand going into the ship with a wave coming in."
+                                loading="lazy" draggable="false" />
+                        </section>
+                        <section class="card-description">
+                            <section class="card-title">
+                                <h5>Miller</h5>
+                            </section>
+                            <section class="planet-description">
+                                <p>A planet full of water</p>
+                                <i class="fa-solid fa-droplet" style="color: #000000"></i>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="card">
+                        <section class="card-image">
+                            <img src="./assets/images/planets/dr-man.png"
+                                alt="A scene depicting Dr. Mann and Cooper on the planet" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="card-description">
+                            <section class="card-title">
+                                <h5>Mann</h5>
+                            </section>
+                            <section class="planet-description">
+                                <p>A planet with frozen mountains</p>
+                                <i class="fa-solid fa-snowflake" style="color: #000000"></i>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="card">
+                        <section class="card-image">
+                            <img src="./assets/images/planets/edmunds.png" alt="Dr. Brand going to camp at Edmund's"
+                                loading="lazy" draggable="false" />
+                        </section>
+                        <section class="card-description">
+                            <section class="card-title">
+                                <h5>Edmunds</h5>
+                            </section>
+                            <section class="planet-description">
+                                <p>A rocky planet</p>
+                                <i class="fa-solid fa-mountain" style="color: #000000"></i>
+                            </section>
+                        </section>
                     </section>
                 </section>
             </section>
-        </header>
-        <main>
-            <section class="main-container">
-                <section class="prais-box">
-                    <h3>A wonderful movie for lovers of the universe</h3>
+            <section class="characters-container" id="Characters">
+                <section class="characters-title">
+                    <h4>Characters</h4>
                 </section>
-                <section class="theories-box">
-                    <section class="endurance-image"></section>
-                    <section class="theories">
-                        <h4>Do you know the theories of relativity?</h4>
-                        <p>The whole movie talks about the theories, but do you know what they are like?</p>
-                        <a href="https://www.space.com/17661-theory-general-relativity.html" target="_blank"
-                            title="Know the theories"><button>To
-                                know</button></a>
+                <section class="characters-cards">
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/cooper.png" alt="Cooper" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Cooper</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Matthew McConaughey</p>
+                            </section>
+                        </section>
                     </section>
-                    <section class="gargantua-image"></section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/brand.png" alt="Brand" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Amelia Brand</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Anne Hathaway</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/romilly.png" alt="Romilly" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Romilly</h5>
+                            </section>
+                            <section class="actor">
+                                <p>David Gyasi</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/doyle.png" alt="Doyle" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Doyle</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Wes Bentley</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/murphy.png" alt="Murphy" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Murphy</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Mackenzie Foy (10 Yrs.)</p>
+                                <p>Jessica Chastain</p>
+                                <p>Ellen Burstyn (Older)</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/tom.png" alt="Tom" loading="lazy" draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Tom</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Timothée Chalamet (15 Yrs.)</p>
+                                <p>Casey Affleck</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/professor-brand.png" alt="Professor Brand"
+                                loading="lazy" draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Professor Brand</h5>
+                            </section>
+                            <section class="actor">
+                                <p>Michael Caine</p>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="character-card">
+                        <section class="character-image">
+                            <img src="./assets/images/characters/donald.png" alt="Donald" loading="lazy"
+                                draggable="false" />
+                        </section>
+                        <section class="character-description">
+                            <section class="character-name">
+                                <h5>Donald</h5>
+                            </section>
+                            <section class="actor">
+                                <p>John Lithgow</p>
+                            </section>
+                        </section>
+                    </section>
                 </section>
-                <section class="planets-cards">
-                    <section class="planets-tittle">
-                        <h4>Planets</h4>
-                    </section>
-                    <section class="cards-container">
-                        <section class="card">
-                            <section class="card-image">
-                                <img src="./assets/images/miller.png"
-                                    alt="A scene depicting Dr. Brand going into the ship with a wave coming in."
-                                    loading="lazy" draggable="false">
-                            </section>
-                            <section class="card-description">
-                                <section class="card-title">
-                                    <h5>Miller</h5>
-                                </section>
-                                <section class="planet-description">
-                                    <p>A planet full of water</p>
-                                    <i class="fa-solid fa-droplet" style="color: #000000;"></i>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="card">
-                            <section class="card-image">
-                                <img src="./assets/images/dr-man.png"
-                                    alt="A scene depicting Dr. Mann and Cooper on the planet" loading="lazy"
-                                    draggable="false">
-                            </section>
-                            <section class="card-description">
-                                <section class="card-title">
-                                    <h5>Mann</h5>
-                                </section>
-                                <section class="planet-description">
-                                    <p>A planet with frozen mountains</p>
-                                    <i class="fa-solid fa-snowflake" style="color: #000000;"></i>
-                                </section>
-                            </section>
-                        </section>
-                        <section class="card">
-                            <section class="card-image">
-                                <img src="./assets/images/edmunds.png" alt="Dr. Brand going to camp at Edmund's"
-                                    loading="lazy" draggable="false">
-                            </section>
-                            <section class="card-description">
-                                <section class="card-title">
-                                    <h5>Edmunds</h5>
-                                </section>
-                                <section class="planet-description">
-                                    <p>A rocky planet</p>
-                                    <i class="fa-solid fa-mountain" style="color: #000000;"></i>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
+                <section class="more-characters">
+                    <a href="https://interstellarfilm.fandom.com/wiki/Category:Characters" title="See more characters"
+                        target="_blank">
+                        <button class="more-characters-button">More characters</button>
+                    </a>
+                </section>
+            </section>
+            <section class="about" id="About">
+                <section class="about-title">
+                    <h4>About Interstellar</h4>
+                </section>
+                <section class="about-description">
+                    <p>Earth's future has been riddled by disasters, famines, and droughts. There is only one way to
+                        ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches
+                        of our solar system allows a team of astronauts to go where no man has gone before, a planet
+                        that may have the right environment to sustain human life.
+                    </p>
                 </section>
             </section>
             <div class="loader">
                 <p>Wait a second please</p>
-                <img src="./assets/gifs/rocket.gif" class="rocket">
+                <img src="./assets/gifs/rocket.gif" class="rocket" />
             </div>
-        </main>
-        <footer></footer>
+    </main>
+    <footer>
+        <section class="footer-container">
+            <section class="footer-title">
+                <h4>Interstellar</h4>
+            </section>
+            <section class="footer-links">
+                <section class="social">
+                    <a href="https://www.facebook.com/Interstellar/" target="_blank" title="Interstellar Facebook">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/interstellar" target="_blank" title="Interstellar Twitter">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.imdb.com/title/tt0816692/" target="_blank" title="Interstellar IMDB">
+                        <i class="fa fa-imdb" aria-hidden="true"></i>
+                    </a>
+                </section>
+                <section class="navigation">
+                    <ul class="footer-list">
+                        <li class="item" id="home">Home</li>
+                        <li class="item" id="planets">Planets</li>
+                        <li class="item" id="characters">Characters</li>
+                        <li class="item" id="about">About</li>
+                    </ul>
+                </section>
+            </section>
+            <section class="copyright">
+                <a href="https://pin.it/6rPkEFU" target="_blank" title="Reference image">Image used as reference</a>
+                <p>&copy; <span id="year"> </span> All rights reserved</p>
+            </section>
+        </section>
+        </section>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 
 </html>
