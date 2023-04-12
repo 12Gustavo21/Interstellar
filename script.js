@@ -213,6 +213,7 @@ if (savedTheme) {
     if (savedTheme === 'dark') {
         switchIcon.classList.remove('fa-moon');
         switchIcon.classList.add('fa-sun');
+        toggleThemeButton.classList.add('theme-dark');
         body.classList.add('theme-dark');
         praisBox.classList.add('theme-dark');
         praisTitle.classList.add('theme-dark');
@@ -227,6 +228,8 @@ if (savedTheme) {
     } else {
         switchIcon.classList.remove('fa-sun');
         switchIcon.classList.add('fa-moon');
+        toggleThemeButton.classList.remove('theme-dark');
+        switchIcon.classList.add('theme-light');
         body.classList.add('theme-light');
         praisBox.classList.remove('theme-dark');
         praisTitle.classList.remove('theme-dark');

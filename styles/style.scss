@@ -27,11 +27,6 @@
     box-sizing: border-box;
 }
 
-*::selection {
-    background-color: $black-medium;
-    color: $white;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -310,8 +305,8 @@ main .card .card-image img {
 
 main .card .card-description {
     @include size(100%, 50%);
-    border: 0.01rem solid $white-medium;
     @include flex(column, center, flex-start);
+    border: 0.01rem solid $white-medium;
     padding: 1rem 1.5rem 1rem 1.5rem;
     gap: 1.5rem;
 }

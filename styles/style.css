@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-*::-moz-selection {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
-*::selection {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -421,11 +411,11 @@ main .card .card-image img {
 main .card .card-description {
   width: 100%;
   height: 50%;
-  border: 0.01rem solid #d2d2d2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  border: 0.01rem solid #d2d2d2;
   padding: 1rem 1.5rem 1rem 1.5rem;
   gap: 1.5rem;
 }
