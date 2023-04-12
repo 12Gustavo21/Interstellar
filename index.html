@@ -33,7 +33,7 @@
     <title>Interstellar</title>
 </head>
 
-<body>
+<body class="theme-light">
     <header>
         <section class="header-container">
             <section class="header-box-one">
@@ -47,6 +47,9 @@
                             <li class="item" id="planets">Planets</li>
                             <li class="item" id="characters">Characters</li>
                             <li class="item" id="about">About</li>
+                            <button class="switch-theme" id="toggle-theme" title="Switch theme">
+                                <i class="fa-solid fa-moon" id="switch-icon"></i>
+                            </button>
                         </ul>
                     </nav>
                 </section>
@@ -98,7 +101,7 @@
                             </section>
                             <section class="planet-description">
                                 <p>A planet full of water</p>
-                                <i class="fa-solid fa-droplet" style="color: #000000"></i>
+                                <i class="fa-solid fa-droplet"></i>
                             </section>
                         </section>
                     </section>
@@ -114,7 +117,7 @@
                             </section>
                             <section class="planet-description">
                                 <p>A planet with frozen mountains</p>
-                                <i class="fa-solid fa-snowflake" style="color: #000000"></i>
+                                <i class="fa-solid fa-snowflake"></i>
                             </section>
                         </section>
                     </section>
@@ -129,7 +132,7 @@
                             </section>
                             <section class="planet-description">
                                 <p>A rocky planet</p>
-                                <i class="fa-solid fa-mountain" style="color: #000000"></i>
+                                <i class="fa-solid fa-mountain"></i>
                             </section>
                         </section>
                     </section>
@@ -146,7 +149,7 @@
                                 draggable="false" />
                         </section>
                         <section class="character-description">
-                            <section class="character-name">
+                            <section>
                                 <h5>Cooper</h5>
                             </section>
                             <section class="actor">
@@ -274,10 +277,10 @@
                     </p>
                 </section>
             </section>
-            <div class="loader">
+            <section class="loader">
                 <p>Wait a second please</p>
                 <img src="./assets/gifs/rocket.gif" class="rocket" />
-            </div>
+            </section>
     </main>
     <footer>
         <section class="footer-container">

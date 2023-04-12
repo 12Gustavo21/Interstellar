@@ -60,7 +60,7 @@ header .header-container {
 }
 
 header .header-box-one {
-    @include size(100%, 15%);
+    @include size(100%, 15vh);
     @include flex(row, space-around, center);
     position: fixed;
     inset: 0;
@@ -115,7 +115,7 @@ footer .footer-list .item::after,
 footer .copyright a::after {
     display: block;
     content: "";
-    border-bottom: solid 1px $white;
+    border-bottom: solid 0.0625rem $white;
     transform: scaleX(0);
     transition: transform 300ms ease-in-out;
 }
@@ -131,6 +131,23 @@ footer .footer-list .item:hover,
 footer .copyright a:hover {
     transform: translateY(-0.1rem);
     cursor: pointer;
+}
+
+header .switch-theme {
+    @include size(2.5rem, 2.5rem);
+    @include flex(row, center, center);
+    @include font(100, 1.2rem, "Lora", $white);
+    background-color: $black-light;
+    border-radius: 6.25rem;
+    box-shadow: 0 0.5rem 0.5rem -0.4rem;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    transition: all 250ms;
+}
+
+header .switch-theme:hover {
+    transform: scale(1.05);
 }
 
 header .header-box-two {
@@ -223,7 +240,7 @@ main .theories-box .theories p {
     padding: 0.5rem 0 2rem 0;
 }
 
-main .theories .theories-button {
+main .theories button {
     @include size(9rem, 2.5rem);
     @include font(100, 1rem, "Lora", $black);
     background: transparent;
@@ -369,6 +386,7 @@ main .character-image img {
 
 main .character-image img:hover {
     transform: scale(1.1);
+    filter: grayscale(100%);
 }
 
 main .character-card .character-description {
@@ -390,7 +408,7 @@ main .character-description h5::after {
     left: 0;
     right: 0;
     margin: auto;
-    background-color: $black;
+    border-bottom: 0.1rem solid $black;
 }
 
 main .character-description p {
@@ -420,10 +438,11 @@ main .more-characters .more-characters-button:focus {
 }
 
 main .about {
-    @include size(100%, 55vh);
+    width: 100%;
+    min-height: 55vh;
     @include flex(column, center, center);
     background-color: $beige;
-    margin-bottom: 7rem;
+    padding: 4rem 0;
     gap: 1rem;
 }
 
@@ -539,7 +558,7 @@ footer .copyright a {
 .loader {
     @include size(100%, 100vh);
     @include flex(column, center, center);
-    background-color: $white;
+    background-color: $black-medium;
     padding: 2rem;
     inset: 0;
     gap: 2rem;
@@ -547,7 +566,7 @@ footer .copyright a {
 }
 
 .loader p {
-    @include font(600, 1.5rem, "Lora", $black);
+    @include font(600, 1.5rem, "Lora", $white);
     text-align: center;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -569,6 +588,62 @@ footer .copyright a {
     100% {
         transform: translateY(0rem);
     }
+}
+
+/* Darks and Lights mode */
+
+header .switch-theme.theme-dark {
+    color: $sun-color;
+}
+
+main .prais-box.theme-dark,
+footer.theme-dark {
+    background-color: $black-light;
+}
+
+main .prais-box .prais-title.theme-dark::after,
+main .characters-container.theme-dark .character-description h5::after {
+    border-bottom-color: $white;
+}
+
+main .prais-box .prais-title.theme-dark,
+main .theories-box .theories.theme-dark p,
+main .theories-box .theories.theme-dark h4,
+main .planets-tittle.theme-dark h4,
+main .planets-cards.theme-dark,
+main .cards-container.theme-dark .card h5,
+main .cards-container.theme-dark .card p,
+main .characters-container.theme-dark .characters-title h4,
+main .characters-container.theme-dark .character-card h5,
+main .characters-container.theme-dark .character-card p,
+main .about.theme-dark h4,
+main .about.theme-dark p{
+    color: $white;
+}
+
+main .theories-box .theories.theme-dark,
+main .characters-container.theme-dark .characters-title,
+main .about.theme-dark {
+    background-color: $black-medium;
+}
+
+main .theories-box .theories.theme-dark button,
+main .characters-container.theme-dark .more-characters button {
+    border-color: $white;
+    color: $white;
+}
+
+main .planets-cards.theme-dark,
+main .characters-container.theme-dark {
+    background-color: $black-light;
+}
+
+main .cards-container.theme-dark .card {
+    border: 0.0625rem solid $white;
+}
+
+main .cards-container.theme-dark .card .card-description {
+    border: none;
 }
 
 /* Media Queries */
