@@ -83,6 +83,7 @@ header .header-title h1 {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
@@ -122,6 +123,7 @@ header .header-list .item {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   position: relative;
   transition: all 300ms ease-in-out;
 }
@@ -171,6 +173,7 @@ header .switch-theme {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   background-color: #2d2d2d;
   border-radius: 6.25rem;
   box-shadow: 0 0.5rem 0.5rem -0.4rem;
@@ -203,7 +206,6 @@ header .description {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  text-align: center;
   gap: 1rem;
 }
 
@@ -214,6 +216,7 @@ header .description h2 {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
@@ -227,6 +230,7 @@ header .description button {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   background: transparent;
   border: 1px solid #ffffff;
   cursor: pointer;
@@ -259,6 +263,7 @@ main .prais-box {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
 }
 
 main .prais-box .prais-title {
@@ -268,6 +273,7 @@ main .prais-box .prais-title {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   position: relative;
 }
 
@@ -290,7 +296,8 @@ main .theories-box {
   align-items: center;
 }
 
-main .theories-box .endurance-image {
+main .theories-box .endurance-image,
+main .theories-box .gargantua-image {
   width: 35%;
   height: 100%;
 }
@@ -302,7 +309,6 @@ main .theories-box .theories {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 4rem;
   background-color: #edede9;
 }
@@ -314,6 +320,7 @@ main .theories-box .theories h4 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .theories-box .theories p {
@@ -323,6 +330,7 @@ main .theories-box .theories p {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   padding: 0.5rem 0 2rem 0;
 }
 
@@ -335,6 +343,7 @@ main .theories button {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   background: transparent;
   border: 0.1rem solid #000000;
   cursor: pointer;
@@ -347,11 +356,6 @@ main .theories .theories-button:hover,
 main .theories .theories-button:focus {
   box-shadow: 0 0.5rem 0.5rem -0.4rem;
   transform: translateY(-0.25rem);
-}
-
-main .theories-box .gargantua-image {
-  width: 35%;
-  height: 100%;
 }
 
 main .planets-cards {
@@ -380,6 +384,7 @@ main .planets-tittle h4 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -456,6 +461,7 @@ main .card-description h5 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .card-description p {
@@ -465,6 +471,7 @@ main .card-description p {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .card-description .planet-description {
@@ -485,6 +492,7 @@ main .planet-description p {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .characters-container {
@@ -513,6 +521,7 @@ main .characters-title h4 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -570,7 +579,6 @@ main .character-card .character-description {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  text-align: center;
 }
 
 main .character-description h5 {
@@ -580,6 +588,7 @@ main .character-description h5 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   position: relative;
 }
 
@@ -602,6 +611,7 @@ main .character-description p {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .characters-container .more-characters {
@@ -622,6 +632,7 @@ main .more-characters .more-characters-button {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   background: transparent;
   border: 0.1rem solid #000000;
   cursor: pointer;
@@ -664,6 +675,7 @@ main .about-title h4 {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 main .about .about-description {
@@ -673,7 +685,6 @@ main .about .about-description {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  text-align: center;
 }
 
 main .about-description p {
@@ -683,6 +694,7 @@ main .about-description p {
   color: #000000;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 footer {
@@ -722,6 +734,7 @@ footer .footer-title h4 {
   color: #d2d2d2;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -770,6 +783,7 @@ footer .navigation li {
   color: #8f9296;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
 }
 
 footer .footer-list {
@@ -795,6 +809,7 @@ footer .footer-list .item {
   color: #ffffff;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   position: relative;
   transition: all 300ms ease-in-out;
 }
@@ -812,6 +827,7 @@ footer .copyright {
   color: #d2d2d2;
   letter-spacing: 0.02rem;
   word-wrap: break-word;
+  text-align: center;
   gap: 1rem;
 }
 
@@ -834,7 +850,7 @@ footer .copyright a {
   inset: 0;
   gap: 2rem;
   position: absolute;
-  z-index: 2;
+  z-index: 999;
 }
 
 .loader p {
@@ -942,11 +958,25 @@ main .cards-container.theme-dark .card .card-description {
     width: 100%;
     height: 100%;
   }
+  main .theories-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  main .theories-box .endurance-image,
+  main .theories-box .gargantua-image {
+    width: 100%;
+    height: 100%;
+  }
+  main .theories-box .theories {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (width <= 600px) {
-  footer {
-    text-align: center;
-  }
   footer .footer-title {
     display: flex;
     flex-direction: column;

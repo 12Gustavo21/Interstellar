@@ -19,6 +19,7 @@
     color: $color;
     letter-spacing: 0.02rem;
     word-wrap: break-word;
+    text-align: center;
 }
 
 * {
@@ -164,7 +165,6 @@ header .header-box-two {
 header .description {
     @include size(100%, 100%);
     @include flex(column, flex-end, center);
-    text-align: center;
     gap: 1rem;
 }
 
@@ -204,6 +204,7 @@ main .container {
 main .prais-box {
     @include size(100%, 30vh);
     @include flex(column, center, center);
+    padding: 0 1rem;
 }
 
 main .prais-box .prais-title {
@@ -226,14 +227,14 @@ main .theories-box {
     @include flex(row, space-evenly, center);
 }
 
-main .theories-box .endurance-image {
+main .theories-box .endurance-image,
+main .theories-box .gargantua-image {
     @include size(35%, 100%);
 }
 
 main .theories-box .theories {
     @include size(30%, 100%);
     @include flex(column, center, center);
-    text-align: center;
     padding: 4rem;
     background-color: $beige;
 }
@@ -262,10 +263,6 @@ main .theories .theories-button:hover,
 main .theories .theories-button:focus {
     box-shadow: 0 0.5rem 0.5rem -0.4rem;
     transform: translateY(-0.25rem);
-}
-
-main .theories-box .gargantua-image {
-    @include size(35%, 100%);
 }
 
 main .planets-cards {
@@ -399,7 +396,6 @@ main .character-image img:hover {
 main .character-card .character-description {
     @include size(100%, 50%);
     @include flex(column, space-evenly, center);
-    text-align: center;
 }
 
 main .character-description h5 {
@@ -465,7 +461,6 @@ main .about-title h4 {
 main .about .about-description {
     @include size(60%, 50%);
     @include flex(column, flex-start, center);
-    text-align: center;
 }
 
 main .about-description p {
@@ -570,12 +565,11 @@ footer .copyright a {
     inset: 0;
     gap: 2rem;
     position: absolute;
-    z-index: 2;
+    z-index: 999;
 }
 
 .loader p {
     @include font(600, 1.5rem, "Lora", $white);
-    text-align: center;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
@@ -669,13 +663,23 @@ main .cards-container.theme-dark .card .card-description {
     header .header-navigation-box {
         @include size(100%, 100%);
     }
+
+    main .theories-box {
+        @include flex(column, center, center);
+        @include size(100%, 100vh);
+    }
+
+    main .theories-box .endurance-image,
+    main .theories-box .gargantua-image {
+        @include size(100%, 100%);
+    }
+
+    main .theories-box .theories {
+        @include size(100%, 100%);
+    }
 }
 
 @media (width <= 600px) {
-    footer {
-        text-align: center;
-    }
-
     footer .footer-title {
         @include flex(column, center, center);
     }
@@ -695,7 +699,7 @@ main .cards-container.theme-dark .card .card-description {
 
 @media (width <= 375px) {
     header .header-nav .header-list .item {
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
 
     header .description h2 {
