@@ -23,7 +23,7 @@ header::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
-  z-index: -1;
+  z-index: 0;
 }
 
 header .header-container {
@@ -33,7 +33,6 @@ header .header-container {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
 }
 
 header .header-box-one {
@@ -45,17 +44,27 @@ header .header-box-one {
   align-items: center;
   position: fixed;
   inset: 0;
+  z-index: 12;
   transition: all 0.3s ease-in-out;
 }
 
 header .header-box-one.visible {
   top: 0;
   background-color: #1a1a1a;
-  z-index: 1;
+  z-index: 2;
 }
 
 header .header-box-one.hidden {
   top: -100%;
+}
+
+header .responsive-title-button {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 header .header-title {
@@ -140,6 +149,15 @@ footer .copyright a:hover {
   cursor: pointer;
 }
 
+header .theme-button {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 header .switch-theme {
   width: 2.5rem;
   height: 2.5rem;
@@ -165,7 +183,7 @@ header .switch-theme {
 }
 
 header .switch-theme:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 header .header-box-two {
@@ -175,6 +193,7 @@ header .header-box-two {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 header .description {
@@ -184,6 +203,7 @@ header .description {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  text-align: center;
   gap: 1rem;
 }
 
@@ -814,6 +834,7 @@ footer .copyright a {
   inset: 0;
   gap: 2rem;
   position: absolute;
+  z-index: 2;
 }
 
 .loader p {
@@ -902,7 +923,27 @@ main .cards-container.theme-dark .card .card-description {
 }
 
 /* Media Queries */
-@media (max-width: 600px) {
+@media (width <= 768px) {
+  header .header-box-one {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header .header-box-one .header-nav {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .header-navigation-box {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (width <= 600px) {
   footer {
     text-align: center;
   }
@@ -929,5 +970,13 @@ main .cards-container.theme-dark .card .card-description {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+@media (width <= 375px) {
+  header .header-nav .header-list .item {
+    font-size: 0.9rem;
+  }
+  header .description h2 {
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=style.css.map */

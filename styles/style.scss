@@ -45,13 +45,12 @@ header::after {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
-    z-index: -1;
+    z-index: 0;
 }
 
 header .header-container {
     @include size(100%, 100%);
     @include flex(column, space-between, center);
-    z-index: 1;
 }
 
 header .header-box-one {
@@ -59,17 +58,23 @@ header .header-box-one {
     @include flex(row, space-around, center);
     position: fixed;
     inset: 0;
+    z-index: 12;
     transition: all 0.3s ease-in-out;
 }
 
 header .header-box-one.visible {
     top: 0;
     background-color: $black-medium;
-    z-index: 1;
+    z-index: 2;
 }
 
 header .header-box-one.hidden {
     top: -100%;
+}
+
+header .responsive-title-button {
+    @include size(50%, 100%);
+    @include flex(row, center, center);
 }
 
 header .header-title {
@@ -128,6 +133,11 @@ footer .copyright a:hover {
     cursor: pointer;
 }
 
+header .theme-button {
+    @include size(5rem, 5rem);
+    @include flex(row, center, center);
+}
+
 header .switch-theme {
     @include size(2.5rem, 2.5rem);
     @include flex(row, center, center);
@@ -142,17 +152,19 @@ header .switch-theme {
 }
 
 header .switch-theme:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 header .header-box-two {
     @include size(100%, 80%);
     @include flex(column, center, center);
+    z-index: 1;
 }
 
 header .description {
     @include size(100%, 100%);
     @include flex(column, flex-end, center);
+    text-align: center;
     gap: 1rem;
 }
 
@@ -558,6 +570,7 @@ footer .copyright a {
     inset: 0;
     gap: 2rem;
     position: absolute;
+    z-index: 2;
 }
 
 .loader p {
@@ -612,7 +625,7 @@ main .characters-container.theme-dark .characters-title h4,
 main .characters-container.theme-dark .character-card h5,
 main .characters-container.theme-dark .character-card p,
 main .about.theme-dark h4,
-main .about.theme-dark p{
+main .about.theme-dark p {
     color: $white;
 }
 
@@ -643,7 +656,22 @@ main .cards-container.theme-dark .card .card-description {
 
 /* Media Queries */
 
-@media (max-width: 600px) {
+@media (width <= 768px) {
+    header .header-box-one {
+        @include size(100%, 25vh);
+        @include flex(column, center, center);
+    }
+
+    header .header-box-one .header-nav {
+        @include flex(column-reverse, space-between, center);
+    }
+
+    header .header-navigation-box {
+        @include size(100%, 100%);
+    }
+}
+
+@media (width <= 600px) {
     footer {
         text-align: center;
     }
@@ -662,5 +690,15 @@ main .cards-container.theme-dark .card .card-description {
 
     footer .copyright {
         @include flex(column, center, center);
+    }
+}
+
+@media (width <= 375px) {
+    header .header-nav .header-list .item {
+        font-size: .9rem;
+    }
+
+    header .description h2 {
+        font-size: 1.3rem;
     }
 }

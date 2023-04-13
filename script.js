@@ -83,8 +83,7 @@ window.addEventListener('progress', event => {
 });
 
 // Dark and light theme
-
-const toggleThemeButton = document.querySelector('#toggle-theme');
+const toggleThemeButton = document.querySelector('.switch-theme');
 
 //Switch icon
 const switchIcon = document.getElementById('switch-icon');
