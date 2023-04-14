@@ -4,7 +4,7 @@
 
 ## Personal project
 
-<img width ='600px' src ='' />
+<img width ='600px' src ='./assets/gifs/recording.gif' />
 
 *Technologies*
 
