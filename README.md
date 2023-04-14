@@ -1,10 +1,10 @@
 # Interstellar
 
-> Status : Unfinished project 🕰️ / Open PR
+> Status : Finished project ✅ / Open PR
 
 ## Personal project
 
-<img width ='600px' src ='./assets/gifs/recording.gif' />
+<img width ='900px' src ='./assets/gifs/recording.gif' />
 
 *Technologies*
 
@@ -14,7 +14,6 @@
 + JQuery <img width="15px" src="https://releases.jquery.com/jquery-wp-content/themes/releases.jquery.com/i/favicon.ico" />
 + Parallax <img width="15px" src="https://cdn-icons-png.flaticon.com/128/3368/3368887.png" />
 + Font Awesome <img width="15px" src="https://fontawesome.com/images/favicon/icon.svg" /> 
-
 
 ### How to use
  
