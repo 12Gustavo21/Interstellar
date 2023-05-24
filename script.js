@@ -2,9 +2,9 @@ $(document).ready(function () {
 
     // Parallax
     setTimeout(function () {
-        $('header').parallax({ imageSrc: './assets/images/geral/background.png' });
-        $('.endurance-image').parallax({ imageSrc: './assets/images/geral/endurance.png' });
-        $('.gargantua-image').parallax({ imageSrc: './assets/images/geral/gargantua.png' });
+        $('header').parallax({ imageSrc: './assets/images/geral/background.webp' });
+        $('.endurance-image').parallax({ imageSrc: './assets/images/geral/endurance.webp' });
+        $('.gargantua-image').parallax({ imageSrc: './assets/images/geral/gargantua.webp' });
     }, 250);
 
     // Show or hide header
@@ -70,6 +70,10 @@ year.textContent = new Date().getFullYear();
 // Loader
 const loader = document.querySelector('.loader');
 const body = document.querySelector('body');
+
+window.addEventListener('beforeunload', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 window.addEventListener('load', () => {
     loader.style.display = 'none';
