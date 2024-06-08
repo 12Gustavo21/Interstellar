@@ -1,25 +1,12 @@
 @import "./variables";
+@import "./mixins";
 
-@mixin size($width, $height) {
-    width: $width;
-    height: $height;
+:root[data-theme="light"] {
+    @include light-theme;
 }
 
-@mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin font($weight, $size, $family, $color) {
-    font-weight: $weight;
-    font-size: $size;
-    font-family: $family, serif;
-    color: $color;
-    letter-spacing: 0.02rem;
-    word-wrap: break-word;
-    text-align: center;
+:root[data-theme="dark"] {
+    @include dark-theme;
 }
 
 * {
@@ -37,7 +24,7 @@ body {
 }
 
 header {
-    @include size(100%, 70vh); 
+    @include size(100%, 70vh);
     position: relative;
 }
 
@@ -60,13 +47,22 @@ header .header-box-one {
     position: fixed;
     inset: 0;
     z-index: 12;
-    transition: all 0.3s ease-in-out;
+    padding: 0 3rem;
+    transition: $default-transition;
 }
 
 header .header-box-one.visible {
     top: 0;
-    background-color: $black-medium;
+    background-color: var(--bg-color-secondary);
     z-index: 2;
+
+    .header-title h1 {
+        color: var(--text-color);
+    }
+
+    .header-list .item {
+        color: var(--text-color);
+    }
 }
 
 header .header-box-one.hidden {
@@ -75,11 +71,11 @@ header .header-box-one.hidden {
 
 header .header-title {
     @include size(50%, 100%);
-    @include flex(column, center, center);
+    @include flex(column, center, flex-start);
 }
 
 header .header-title h1 {
-    @include font(100, 2rem, "Lora", $white);
+    @include font(100, 2rem, "Lora", var(--muted-text));
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
@@ -101,10 +97,10 @@ header .header-list {
 }
 
 header .header-list .item {
-    @include font(100, 1.1rem, "Lora", $white);
+    @include font(100, 1.1rem, "Lora", var(--muted-text));
     user-select: none;
     position: relative;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 header .header-list .item::after,
@@ -112,9 +108,9 @@ footer .footer-list .item::after,
 footer .copyright a::after {
     display: block;
     content: "";
-    border-bottom: solid 0.0625rem $white;
+    border-bottom: solid 0.0625rem var(--text-color);
     transform: scaleX(0);
-    transition: transform 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 header .header-list .item:hover::after,
@@ -130,26 +126,42 @@ footer .copyright a:hover {
     cursor: pointer;
 }
 
-header .theme-button {
-    @include size(5rem, 5rem);
-    @include flex(row, center, center);
-}
-
-header .switch-theme {
-    @include size(2.5rem, 2.5rem);
-    @include flex(row, center, center);
-    @include font(100, 1.2rem, "Lora", $white);
-    background-color: $black-light;
-    border-radius: 6.25rem;
-    box-shadow: 0 0.5rem 0.5rem -0.4rem;
+#theme-switcher {
+    position: relative;
+    background-color: var(--switch-bg);
+    padding: 0.66rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 1.33rem;
     cursor: pointer;
-    border: none;
-    user-select: none;
-    transition: all 250ms;
 }
 
-header .switch-theme:hover {
-    transform: scale(1.1);
+#theme-switcher::after {
+    content: "";
+    position: absolute;
+    width: 2.22rem;
+    height: 2.22rem;
+    background-color: var(--switch-circle-bg);
+    border-radius: 50%;
+    z-index: 0;
+    left: 0;
+    transform: translateX(var(--switch-circle-pos));
+    transition: $default-transition;
+}
+
+#theme-switcher svg {
+    z-index: 1;
+}
+
+#icon-sun {
+    fill: var(--icon-sun);
+    transition: $default-transition;
+}
+
+#icon-moon {
+    fill: var(--icon-moon);
+    transition: $default-transition;
 }
 
 header .header-box-two {
@@ -166,21 +178,21 @@ header .description {
 }
 
 header .description h2 {
-    @include font(100, 1.5rem, "Lora", $white);
+    @include font(100, 1.5rem, "Lora", var(--muted-text));
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
 
 header .description button {
     @include size(6.25rem, 2.5rem);
-    @include font(100, 1rem, "Lora", $white);
+    @include font(100, 1rem, "Lora", var(--muted-text));
     background: transparent;
-    border: .0625rem solid $white;
+    border: 0.0625rem solid var(--muted-text);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     text-decoration: none;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 header .description button:hover,
@@ -194,7 +206,7 @@ main {
     min-height: 100vh;
 }
 
-main .container {
+main .main-container {
     @include size(100%, 100%);
 }
 
@@ -202,10 +214,11 @@ main .prais-box {
     @include size(100%, 30vh);
     @include flex(column, center, center);
     padding: 0 1rem;
+    background-color: var(--bg-color-primary);
 }
 
 main .prais-box .prais-title {
-    @include font(600, 1.3rem, "Lora", $black);
+    @include font(600, 1.3rem, "Lora", var(--text-color));
     position: relative;
 }
 
@@ -214,7 +227,7 @@ main .prais-box .prais-title::after {
     display: block;
     margin: 1rem auto;
     border-radius: 0.3rem;
-    border-bottom: solid 0.2rem $black;
+    border-bottom: solid 0.2rem var(--text-color);
     width: 15%;
     transform: scaleX(1);
 }
@@ -233,27 +246,27 @@ main .theories-box .theories {
     @include size(30%, 100%);
     @include flex(column, center, center);
     padding: 4rem;
-    background-color: $beige;
+    background-color: var(--bg-color-secondary);
 }
 
 main .theories-box .theories h4 {
-    @include font(600, 1.5rem, "Lora", $black);
+    @include font(600, 1.5rem, "Lora", var(--text-color));
 }
 
 main .theories-box .theories p {
-    @include font(100, 0.9rem, "Lora", $black);
+    @include font(100, 0.9rem, "Lora", var(--text-color));
     padding: 0.5rem 0 2rem 0;
 }
 
 main .theories button {
     @include size(9rem, 2.5rem);
-    @include font(100, 1rem, "Lora", $black);
+    @include font(100, 1rem, "Lora", var(--text-color));
     background: transparent;
-    border: 0.1rem solid $black;
+    border: 0.1rem solid var(--text-color);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 main .theories .theories-button:hover,
@@ -265,6 +278,7 @@ main .theories .theories-button:focus {
 main .planets-cards {
     @include size(100%, 65vh);
     @include flex(column, center, center);
+    background-color: var(--bg-color-primary);
 }
 
 main .planets-tittle {
@@ -274,7 +288,7 @@ main .planets-tittle {
 }
 
 main .planets-tittle h4 {
-    @include font(600, 1.8rem, "Lora", $black);
+    @include font(600, 1.8rem, "Lora", var(--text-color));
     text-transform: uppercase;
 }
 
@@ -288,9 +302,10 @@ main .cards-container {
 main .cards-container .card {
     @include size(20rem, 20rem);
     @include flex(column, flex-start, center);
+    border: 0.01rem solid var(--muted-text);
     border-radius: 0.3rem;
     box-shadow: 0 0.4rem 0.4rem -0.5rem;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 main .cards-container .card:hover {
@@ -312,7 +327,7 @@ main .card .card-image img {
 main .card .card-description {
     @include size(100%, 50%);
     @include flex(column, center, flex-start);
-    border: 0.01rem solid $white-medium;
+    border-top: none;
     padding: 1rem 1.5rem 1rem 1.5rem;
     gap: 1.5rem;
 }
@@ -323,37 +338,34 @@ main .card .card-title {
 }
 
 main .card-description h5 {
-    @include font(600, 1.2rem, "Lora", $black);
+    @include font(600, 1.2rem, "Lora", var(--text-color));
 }
 
 main .card-description p {
-    @include font(100, 1rem, "Lora", $black);
+    @include font(100, 1rem, "Lora", var(--text-color));
 }
 
 main .card-description .planet-description {
     @include size(100%, 50%);
     @include flex(row, space-between, center);
-    border-top: 0.01rem solid $white-medium;
+    border-top: 0.01rem solid var(--muted-text);
     padding-top: 0.5rem;
-}
-
-main .planet-description p {
-    @include font(100, 0.9rem, "Lora", $black);
+    @include font(100, 0.9rem, "Lora", var(--text-color));
 }
 
 main .characters-container {
     @include size(100%, 100%);
     @include flex(column, center, center);
+    background-color: var(--bg-color-secondary);
 }
 
 main .characters-container .characters-title {
     @include size(100%, 8rem);
     @include flex(row, center, center);
-    background-color: $beige;
 }
 
 main .characters-title h4 {
-    @include font(600, 1.8rem, "Lora", $black);
+    @include font(600, 1.8rem, "Lora", var(--text-color));
     text-transform: uppercase;
 }
 
@@ -369,7 +381,7 @@ main .characters-cards .character-card {
     @include size(20rem, 30rem);
     @include flex(column, center, center);
     flex-basis: calc(100% / 4 - 4rem);
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 main .character-card .character-image {
@@ -382,7 +394,7 @@ main .character-image img {
     @include size(100%, 100%);
     object-fit: cover;
     object-position: center;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 main .character-image img:hover {
@@ -396,7 +408,7 @@ main .character-card .character-description {
 }
 
 main .character-description h5 {
-    @include font(600, 1.2rem, "Lora", $black);
+    @include font(600, 1.2rem, "Lora", var(--text-color));
     position: relative;
 }
 
@@ -408,11 +420,11 @@ main .character-description h5::after {
     left: 0;
     right: 0;
     margin: auto;
-    border-bottom: 0.1rem solid $black;
+    border-bottom: 0.1rem solid var(--text-color);
 }
 
 main .character-description p {
-    @include font(100, 1rem, "Lora", $black);
+    @include font(100, 1rem, "Lora", var(--text-color));
 }
 
 main .characters-container .more-characters {
@@ -422,13 +434,13 @@ main .characters-container .more-characters {
 
 main .more-characters .more-characters-button {
     @include size(15rem, 2.5rem);
-    @include font(100, 1rem, "Lora", $black);
+    @include font(100, 1rem, "Lora", var(--text-color));
     background: transparent;
-    border: 0.1rem solid $black;
+    border: 0.1rem solid var(--text-color);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 main .more-characters .more-characters-button:hover,
@@ -441,7 +453,7 @@ main .about {
     width: 100%;
     min-height: 55vh;
     @include flex(column, center, center);
-    background-color: $beige;
+    background-color: var(--bg-color-primary);
     padding: 4rem 0;
     gap: 1rem;
 }
@@ -452,7 +464,7 @@ main .about .about-title {
 }
 
 main .about-title h4 {
-    @include font(600, 1.8rem, "Lora", $black);
+    @include font(600, 1.8rem, "Lora", var(--text-color));
 }
 
 main .about .about-description {
@@ -461,13 +473,13 @@ main .about .about-description {
 }
 
 main .about-description p {
-    @include font(100, 1rem, "Lora", $black);
+    @include font(100, 1rem, "Lora", var(--text-color));
 }
 
 footer {
     @include flex(row, normal, flex-start);
     @include size(100%, 50%);
-    background-color: $black-medium;
+    background-color: var(--bg-color-secondary);
     padding: 2.8125rem 3.125rem;
 }
 
@@ -483,7 +495,7 @@ footer .footer-title {
 }
 
 footer .footer-title h4 {
-    @include font(600, 2rem, "Lora", $white-medium);
+    @include font(600, 2rem, "Lora", var(--text-color));
     text-transform: uppercase;
 }
 
@@ -505,12 +517,12 @@ footer .social a {
     justify-content: center;
     width: 2.1875rem;
     height: 2.1875rem;
-    background-color: #33383b;
+    background-color: var(--bg-social);
     border-radius: 0.125rem;
     font-size: 1.25rem;
     text-decoration: none;
-    color: $white;
-    transition: all 0.25s;
+    color: var(--bg-social-icon);
+    transition: $default-transition;
 }
 
 footer .social a:hover {
@@ -518,7 +530,7 @@ footer .social a:hover {
 }
 
 footer .navigation li {
-    @include font(100, 1rem, "Lora", $grey);
+    @include font(100, 1rem, "Lora", var(--text-color));
 }
 
 footer .footer-list {
@@ -526,31 +538,31 @@ footer .footer-list {
     @include size(100%, 50%);
     font-size: 1.125rem;
     font-weight: bold;
-    color: $white;
+    color: var(--text-color);
     padding: 0 0 0.625rem;
     list-style: none;
     gap: 1rem;
-    transition: ease 0.25s;
+    transition: $default-transition;
 }
 
 footer .footer-list .item {
-    @include font(900, 1rem, "Lora", $white);
+    @include font(900, 1rem, "Lora", var(--text-color));
     user-select: none;
     position: relative;
-    transition: all 300ms ease-in-out;
+    transition: $default-transition;
 }
 
 footer .copyright {
     @include size(100%, 50%);
     @include flex(column, center, flex-start);
-    @include font(200, 1rem, "Lora", $white-medium);
+    @include font(200, 1rem, "Lora", var(--text-color));
     gap: 1rem;
 }
 
 footer .copyright a {
     text-decoration: none;
     position: relative;
-    color: $white-medium;
+    color: var(--text-color);
 }
 
 /* Loader */
@@ -558,7 +570,7 @@ footer .copyright a {
 .loader {
     @include size(100%, 100vh);
     @include flex(column, center, center);
-    background-color: $black-medium;
+    background-color: var(--bg-color-secondary);
     padding: 2rem;
     inset: 0;
     gap: 2rem;
@@ -567,14 +579,14 @@ footer .copyright a {
 }
 
 .loader p {
-    @include font(600, 1.5rem, "Lora", $white);
+    @include font(600, 1.5rem, "Lora", var(--text-color));
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
 
 .rocket {
     @include size(10rem, 10rem);
-    filter: drop-shadow(0.0625rem 0.0625rem 0.375rem $black);
+    filter: drop-shadow(0.0625rem 0.0625rem 0.375rem var(--text-color));
     animation: animation 2s infinite linear;
 }
 
@@ -590,64 +602,7 @@ footer .copyright a {
     }
 }
 
-/* Darks and Lights mode */
-
-header .switch-theme.theme-dark {
-    color: $sun-color;
-}
-
-main .prais-box.theme-dark,
-footer.theme-dark {
-    background-color: $black-light;
-}
-
-main .prais-box .prais-title.theme-dark::after,
-main .characters-container.theme-dark .character-description h5::after {
-    border-bottom-color: $white;
-}
-
-main .prais-box .prais-title.theme-dark,
-main .theories-box .theories.theme-dark p,
-main .theories-box .theories.theme-dark h4,
-main .planets-tittle.theme-dark h4,
-main .planets-cards.theme-dark,
-main .cards-container.theme-dark .card h5,
-main .cards-container.theme-dark .card p,
-main .characters-container.theme-dark .characters-title h4,
-main .characters-container.theme-dark .character-card h5,
-main .characters-container.theme-dark .character-card p,
-main .about.theme-dark h4,
-main .about.theme-dark p {
-    color: $white;
-}
-
-main .theories-box .theories.theme-dark,
-main .characters-container.theme-dark .characters-title,
-main .about.theme-dark {
-    background-color: $black-medium;
-}
-
-main .theories-box .theories.theme-dark button,
-main .characters-container.theme-dark .more-characters button {
-    border-color: $white;
-    color: $white;
-}
-
-main .planets-cards.theme-dark,
-main .characters-container.theme-dark {
-    background-color: $black-light;
-}
-
-main .cards-container.theme-dark .card {
-    border: 0.0625rem solid $white;
-}
-
-main .cards-container.theme-dark .card .card-description {
-    border: none;
-}
-
 /* Media Queries */
-
 @media (width <= 1024px) {
     main .planets-cards {
         min-height: 90vh;
@@ -678,6 +633,11 @@ main .cards-container.theme-dark .card .card-description {
 @media (width <= 768px) {
     header .header-box-one {
         @include size(100%, 25vh);
+        @include flex(column, center, center);
+    }
+
+    header .header-box-one .header-title {
+        @include size(100%, 100%);
         @include flex(column, center, center);
     }
 

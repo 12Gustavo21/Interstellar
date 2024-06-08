@@ -1,3 +1,31 @@
+:root[data-theme=light] {
+  --bg-color-primary: #f9f9f9;
+  --bg-color-secondary: #edede9;
+  --text-color: #000000;
+  --muted-text: #d2d2d2;
+  --bg-social: var(--text-color);
+  --bg-social-icon: var(--bg-color-secondary);
+  --switch-bg: #f5f5f6;
+  --switch-circle-bg: #ffd371;
+  --icon-sun: #997f44;
+  --icon-moon: #b1b0b5;
+  --switch-circle-pos: 0.25rem;
+}
+
+:root[data-theme=dark] {
+  --bg-color-primary: #2d2d2d;
+  --bg-color-secondary: #1a1a1a;
+  --text-color: #ffffff;
+  --muted-text: #f5f5f6;
+  --bg-social: var(--bg-color-primary);
+  --bg-social-icon: #8f9296;
+  --switch-bg: #2d2c35;
+  --switch-circle-bg: #7190ff;
+  --icon-sun: #77757e;
+  --icon-moon: #dce3ff;
+  --switch-circle-pos: 2.9rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,13 +73,20 @@ header .header-box-one {
   position: fixed;
   inset: 0;
   z-index: 12;
+  padding: 0 3rem;
   transition: all 0.3s ease-in-out;
 }
 
 header .header-box-one.visible {
   top: 0;
-  background-color: #1a1a1a;
+  background-color: var(--bg-color-secondary);
   z-index: 2;
+}
+header .header-box-one.visible .header-title h1 {
+  color: var(--text-color);
+}
+header .header-box-one.visible .header-list .item {
+  color: var(--text-color);
 }
 
 header .header-box-one.hidden {
@@ -64,14 +99,14 @@ header .header-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 header .header-title h1 {
   font-weight: 100;
   font-size: 2rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--muted-text);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -111,7 +146,7 @@ header .header-list .item {
   font-weight: 100;
   font-size: 1.1rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--muted-text);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -119,7 +154,7 @@ header .header-list .item {
      -moz-user-select: none;
           user-select: none;
   position: relative;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header .header-list .item::after,
@@ -127,9 +162,9 @@ footer .footer-list .item::after,
 footer .copyright a::after {
   display: block;
   content: "";
-  border-bottom: solid 0.0625rem #ffffff;
+  border-bottom: solid 0.0625rem var(--text-color);
   transform: scaleX(0);
-  transition: transform 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header .header-list .item:hover::after,
@@ -145,42 +180,42 @@ footer .copyright a:hover {
   cursor: pointer;
 }
 
-header .theme-button {
-  width: 5rem;
-  height: 5rem;
+#theme-switcher {
+  position: relative;
+  background-color: var(--switch-bg);
+  padding: 0.66rem;
+  border-radius: 50px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-}
-
-header .switch-theme {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-weight: 100;
-  font-size: 1.2rem;
-  font-family: "Lora", serif;
-  color: #ffffff;
-  letter-spacing: 0.02rem;
-  word-wrap: break-word;
-  text-align: center;
-  background-color: #2d2d2d;
-  border-radius: 6.25rem;
-  box-shadow: 0 0.5rem 0.5rem -0.4rem;
+  gap: 1.33rem;
   cursor: pointer;
-  border: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  transition: all 250ms;
 }
 
-header .switch-theme:hover {
-  transform: scale(1.1);
+#theme-switcher::after {
+  content: "";
+  position: absolute;
+  width: 2.22rem;
+  height: 2.22rem;
+  background-color: var(--switch-circle-bg);
+  border-radius: 50%;
+  z-index: 0;
+  left: 0;
+  transform: translateX(var(--switch-circle-pos));
+  transition: all 0.3s ease-in-out;
+}
+
+#theme-switcher svg {
+  z-index: 1;
+}
+
+#icon-sun {
+  fill: var(--icon-sun);
+  transition: all 0.3s ease-in-out;
+}
+
+#icon-moon {
+  fill: var(--icon-moon);
+  transition: all 0.3s ease-in-out;
 }
 
 header .header-box-two {
@@ -208,7 +243,7 @@ header .description h2 {
   font-weight: 100;
   font-size: 1.5rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--muted-text);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -222,17 +257,17 @@ header .description button {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--muted-text);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
   background: transparent;
-  border: 0.0625rem solid #ffffff;
+  border: 0.0625rem solid var(--muted-text);
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-decoration: none;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header .description button:hover,
@@ -246,7 +281,7 @@ main {
   min-height: 100vh;
 }
 
-main .container {
+main .main-container {
   width: 100%;
   height: 100%;
 }
@@ -259,13 +294,14 @@ main .prais-box {
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+  background-color: var(--bg-color-primary);
 }
 
 main .prais-box .prais-title {
   font-weight: 600;
   font-size: 1.3rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -277,7 +313,7 @@ main .prais-box .prais-title::after {
   display: block;
   margin: 1rem auto;
   border-radius: 0.3rem;
-  border-bottom: solid 0.2rem #000000;
+  border-bottom: solid 0.2rem var(--text-color);
   width: 15%;
   transform: scaleX(1);
 }
@@ -305,14 +341,14 @@ main .theories-box .theories {
   justify-content: center;
   align-items: center;
   padding: 4rem;
-  background-color: #edede9;
+  background-color: var(--bg-color-secondary);
 }
 
 main .theories-box .theories h4 {
   font-weight: 600;
   font-size: 1.5rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -322,7 +358,7 @@ main .theories-box .theories p {
   font-weight: 100;
   font-size: 0.9rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -335,16 +371,16 @@ main .theories button {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
   background: transparent;
-  border: 0.1rem solid #000000;
+  border: 0.1rem solid var(--text-color);
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 main .theories .theories-button:hover,
@@ -360,6 +396,7 @@ main .planets-cards {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color-primary);
 }
 
 main .planets-tittle {
@@ -376,7 +413,7 @@ main .planets-tittle h4 {
   font-weight: 600;
   font-size: 1.8rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -401,9 +438,10 @@ main .cards-container .card {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border: 0.01rem solid var(--muted-text);
   border-radius: 0.3rem;
   box-shadow: 0 0.4rem 0.4rem -0.5rem;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 main .cards-container .card:hover {
@@ -435,7 +473,7 @@ main .card .card-description {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  border: 0.01rem solid #d2d2d2;
+  border-top: none;
   padding: 1rem 1.5rem 1rem 1.5rem;
   gap: 1.5rem;
 }
@@ -453,7 +491,7 @@ main .card-description h5 {
   font-weight: 600;
   font-size: 1.2rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -463,7 +501,7 @@ main .card-description p {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -476,15 +514,12 @@ main .card-description .planet-description {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 0.01rem solid #d2d2d2;
+  border-top: 0.01rem solid var(--muted-text);
   padding-top: 0.5rem;
-}
-
-main .planet-description p {
   font-weight: 100;
   font-size: 0.9rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -497,6 +532,7 @@ main .characters-container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color-secondary);
 }
 
 main .characters-container .characters-title {
@@ -506,14 +542,13 @@ main .characters-container .characters-title {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #edede9;
 }
 
 main .characters-title h4 {
   font-weight: 600;
   font-size: 1.8rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -540,7 +575,7 @@ main .characters-cards .character-card {
   justify-content: center;
   align-items: center;
   flex-basis: calc(25% - 4rem);
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 main .character-card .character-image {
@@ -559,7 +594,7 @@ main .character-image img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 main .character-image img:hover {
@@ -580,7 +615,7 @@ main .character-description h5 {
   font-weight: 600;
   font-size: 1.2rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -596,14 +631,14 @@ main .character-description h5::after {
   left: 0;
   right: 0;
   margin: auto;
-  border-bottom: 0.1rem solid #000000;
+  border-bottom: 0.1rem solid var(--text-color);
 }
 
 main .character-description p {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -624,16 +659,16 @@ main .more-characters .more-characters-button {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
   background: transparent;
-  border: 0.1rem solid #000000;
+  border: 0.1rem solid var(--text-color);
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 main .more-characters .more-characters-button:hover,
@@ -649,7 +684,7 @@ main .about {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #edede9;
+  background-color: var(--bg-color-primary);
   padding: 4rem 0;
   gap: 1rem;
 }
@@ -667,7 +702,7 @@ main .about-title h4 {
   font-weight: 600;
   font-size: 1.8rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -686,7 +721,7 @@ main .about-description p {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #000000;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -699,7 +734,7 @@ footer {
   align-items: flex-start;
   width: 100%;
   height: 50%;
-  background-color: #1a1a1a;
+  background-color: var(--bg-color-secondary);
   padding: 2.8125rem 3.125rem;
 }
 
@@ -726,7 +761,7 @@ footer .footer-title h4 {
   font-weight: 600;
   font-size: 2rem;
   font-family: "Lora", serif;
-  color: #d2d2d2;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -759,12 +794,12 @@ footer .social a {
   justify-content: center;
   width: 2.1875rem;
   height: 2.1875rem;
-  background-color: #33383b;
+  background-color: var(--bg-social);
   border-radius: 0.125rem;
   font-size: 1.25rem;
   text-decoration: none;
-  color: #ffffff;
-  transition: all 0.25s;
+  color: var(--bg-social-icon);
+  transition: all 0.3s ease-in-out;
 }
 
 footer .social a:hover {
@@ -775,7 +810,7 @@ footer .navigation li {
   font-weight: 100;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #8f9296;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -790,18 +825,18 @@ footer .footer-list {
   height: 50%;
   font-size: 1.125rem;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text-color);
   padding: 0 0 0.625rem;
   list-style: none;
   gap: 1rem;
-  transition: ease 0.25s;
+  transition: all 0.3s ease-in-out;
 }
 
 footer .footer-list .item {
   font-weight: 900;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -809,7 +844,7 @@ footer .footer-list .item {
      -moz-user-select: none;
           user-select: none;
   position: relative;
-  transition: all 300ms ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 footer .copyright {
@@ -822,7 +857,7 @@ footer .copyright {
   font-weight: 200;
   font-size: 1rem;
   font-family: "Lora", serif;
-  color: #d2d2d2;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -832,7 +867,7 @@ footer .copyright {
 footer .copyright a {
   text-decoration: none;
   position: relative;
-  color: #d2d2d2;
+  color: var(--text-color);
 }
 
 /* Loader */
@@ -843,7 +878,7 @@ footer .copyright a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1a1a1a;
+  background-color: var(--bg-color-secondary);
   padding: 2rem;
   inset: 0;
   gap: 2rem;
@@ -855,7 +890,7 @@ footer .copyright a {
   font-weight: 600;
   font-size: 1.5rem;
   font-family: "Lora", serif;
-  color: #ffffff;
+  color: var(--text-color);
   letter-spacing: 0.02rem;
   word-wrap: break-word;
   text-align: center;
@@ -866,7 +901,7 @@ footer .copyright a {
 .rocket {
   width: 10rem;
   height: 10rem;
-  filter: drop-shadow(0.0625rem 0.0625rem 0.375rem #000000);
+  filter: drop-shadow(0.0625rem 0.0625rem 0.375rem var(--text-color));
   animation: animation 2s infinite linear;
 }
 
@@ -881,61 +916,6 @@ footer .copyright a {
     transform: translateY(0rem);
   }
 }
-/* Darks and Lights mode */
-header .switch-theme.theme-dark {
-  color: #f9b500;
-}
-
-main .prais-box.theme-dark,
-footer.theme-dark {
-  background-color: #2d2d2d;
-}
-
-main .prais-box .prais-title.theme-dark::after,
-main .characters-container.theme-dark .character-description h5::after {
-  border-bottom-color: #ffffff;
-}
-
-main .prais-box .prais-title.theme-dark,
-main .theories-box .theories.theme-dark p,
-main .theories-box .theories.theme-dark h4,
-main .planets-tittle.theme-dark h4,
-main .planets-cards.theme-dark,
-main .cards-container.theme-dark .card h5,
-main .cards-container.theme-dark .card p,
-main .characters-container.theme-dark .characters-title h4,
-main .characters-container.theme-dark .character-card h5,
-main .characters-container.theme-dark .character-card p,
-main .about.theme-dark h4,
-main .about.theme-dark p {
-  color: #ffffff;
-}
-
-main .theories-box .theories.theme-dark,
-main .characters-container.theme-dark .characters-title,
-main .about.theme-dark {
-  background-color: #1a1a1a;
-}
-
-main .theories-box .theories.theme-dark button,
-main .characters-container.theme-dark .more-characters button {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-main .planets-cards.theme-dark,
-main .characters-container.theme-dark {
-  background-color: #2d2d2d;
-}
-
-main .cards-container.theme-dark .card {
-  border: 0.0625rem solid #ffffff;
-}
-
-main .cards-container.theme-dark .card .card-description {
-  border: none;
-}
-
 /* Media Queries */
 @media (width <= 1024px) {
   main .planets-cards {
@@ -964,6 +944,14 @@ main .cards-container.theme-dark .card .card-description {
   header .header-box-one {
     width: 100%;
     height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header .header-box-one .header-title {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
